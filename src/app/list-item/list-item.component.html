@@ -1,0 +1,28 @@
+<div class="ui violet raised segment" *ngIf="product">
+  <div class="ui middle aligned grid">
+    <div class="column left floated four wide computer sixteen wide mobile">
+      <div class="ui slide masked reveal image">
+        <img src="{{product.imageUrl}}" class="visible content">
+        <img src="{{product.flipImageUrl}}" class="hidden content">
+      </div>
+    </div>
+    <div class="column eight wide computer sixteen wide mobile">
+      <a href="#" class="ui header">{{product.name}}</a>
+      <div class="meta">
+        <span class="date">{{product.sku}}</span>
+      </div>
+      <p class="description">{{product.description}}</p>
+      <h3>
+        {{product.price | currency: 'INR': true}}
+      </h3>
+    </div>
+    <div class="column right floated four wide computer sixteen wide mobile">
+      <div class="ui vertical animated primary large button fluid " tabindex="0">
+        <div class="hidden content">Shop</div>
+        <div class="visible content">
+          <i class="shop icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

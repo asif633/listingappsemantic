@@ -1,0 +1,10 @@
+<div class="ui container">
+  <div class="ui stackable grid">
+    <div class="eight wide column">
+      <app-products-table (selectProduct)="getSelectedProduct($event)" (add)="addOrUpdate($event)"></app-products-table>
+    </div>
+    <div class="eight wide column">
+      <app-product-form [product]="selectedProduct" [addProduct]="addBool"></app-product-form>
+    </div>
+  </div>
+</div>

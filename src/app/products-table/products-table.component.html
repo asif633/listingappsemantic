@@ -1,0 +1,30 @@
+<table class="ui striped table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Product Name</th>
+      <th>Product SKU</th>
+      <th>Select</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products | async; let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.sku}}</td>
+      <td>
+        <input class="ui radio" type="radio" name="optionsRadios" id="optionsRadios1" value="case" (click)="selectedProduct(product)">
+      </td>
+    </tr>
+  </tbody>
+    <tfoot class="full-width">
+    <tr>
+      <th></th>
+      <th colspan="4">
+        <div class="ui right floated small primary labeled icon button" (click)="initializeNew()">
+          <i class="laptop icon"></i> Add Product
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+</table>

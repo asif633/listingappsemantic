@@ -1,0 +1,28 @@
+<div class="ui grid centered">
+  <div class="column six wide">
+    <div class="ui segments">
+      <div class="ui segment">
+        <h3 class="ui red header">Sign In</h3>
+      </div>
+      <div class="ui segment padded left aligned">
+        <form class="ui form" #userForm="ngForm">
+          <div class="field required" [ngClass]="emailControl.errors?.email || emailControl.errors?.required ? 'error' : ''">
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Email" #emailElement #emailControl="ngModel" [(ngModel)]="email" required email>
+            <span [hidden]="emailControl.pristine || !emailControl.errors?.required" class="ui sub header red">Email is required!</span>
+            <span [hidden]="emailControl.pristine || !emailControl.errors?.email" class="ui red sub header">That is not a valid email!</span>
+          </div>
+          <div class="field required" [ngClass]="passwordControl.errors?.required? 'error' : ''">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password" #passwordElement #passwordControl="ngModel" [(ngModel)]="password" required minlength="6"
+              maxlength="30">
+            <span [hidden]="passwordControl.pristine || !passwordControl.errors?.required" class="ui sub red header">Password is required!</span>
+            <span [hidden]="passwordControl.pristine || passwordControl.errors?.minlength<6" class="ui red sub header">Password should be atleast 6 characters!</span>
+          </div>
+          <button [disabled]="!userForm.form.valid" (click)="signin()" class="ui button primary">Submit</button>
+          <p *ngIf="msg" class="ui sub header red">{{msg}}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

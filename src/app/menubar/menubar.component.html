@@ -1,0 +1,25 @@
+<div class="ui teal stackable inverted top fixed menu">
+  <div class="ui container">
+    <div class="header item">
+      <a routerLink="/" href="#"> ListingApp</a>
+    </div>
+    <a class="item" *ngIf="(user|async)?.uid" routerLink="/cardView">
+      Card View
+    </a>
+    <a class="item" *ngIf="(user|async)?.uid" routerLink="/listView">
+      List View
+    </a>
+    <div class="right menu">
+      <li class="item" *ngIf="(user|async)?.uid">
+        <a routerLink="/manageProducts">Manage Products</a>
+      </li>
+      <a class="item" *ngIf="!(user|async)?.uid" routerLink="/signin">
+        Sign In
+      </a>
+      <a class="item" *ngIf="(user|async)?.uid" (click)="signout()">
+        Sign Out
+      </a>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

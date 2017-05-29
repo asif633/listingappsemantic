@@ -1,0 +1,26 @@
+<div class="ui fluid card raised" *ngIf="product">
+  <div class="ui slide masked reveal image">
+    <img src="{{product.imageUrl}}" class="visible content">
+    <img src="{{product.flipImageUrl}}" class="hidden content">
+  </div>
+  <div class="content">
+    <a class="header">{{product.name}}</a>
+    <div class="meta">
+      <span class="date">{{product.sku}}</span>
+    </div>
+    <p>{{product.description}}</p>
+  </div>
+  <div class="extra content">
+    <span>
+      {{product.price | currency: 'INR': true}}    
+    </span>
+    <span class="right floated">
+        <div class="ui vertical animated primary large button" tabindex="0">
+          <div class="hidden content">Shop</div>
+          <div class="visible content">
+            <i class="shop icon"></i>
+          </div>
+        </div>
+    </span>
+  </div>
+</div>

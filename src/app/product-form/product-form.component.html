@@ -1,0 +1,44 @@
+<div class="ui segments" *ngIf="product">
+  <div class="ui segment">
+    <h3 class="ui green header">Product Form</h3>
+  </div>
+  <div class="ui segment padded left aligned">
+    <form class="ui form">
+      <div class="field required">
+        <label for="name">Product Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Product Name" [(ngModel)]="product.name" name="name">
+      </div>
+      <div class="field required">
+        <label for="id">Product SKU</label>
+        <input type="text" class="form-control" id="sku" placeholder="Enter Product SKU" [(ngModel)]="product.sku" name="sku">
+      </div>
+      <div class="field required">
+        <label for="id">Product Description</label>
+        <textarea rows="2" [(ngModel)]="product.description" name="description"></textarea>
+      </div>
+      <div class="field required">
+        <label for="id">Product Price</label>
+        <input type="text" class="form-control" id="price" placeholder="Enter Product Price" [(ngModel)]="product.price" name="price">
+      </div>
+      <div class="field">
+          <label>Upload Image</label>
+          <input required accept=".jpg" id="file" name="file" type="file" >
+      </div>
+      <img *ngIf="product.imageUrl" src="{{product.imageUrl}}" width="200" height="200">
+      <div class="field">
+          <label>Upload Flip Image</label>
+          <input required accept=".jpg" id="flip" name="file" type="file" >
+      </div>
+      <img *ngIf="product.flipImageUrl" src="{{product.flipImageUrl}}" width="200" height="200">
+      <div *ngIf="addProduct==false">
+        <button type="submit" class="ui button primary" (click)="updateProduct()">Update</button>
+        <button type="submit" class="ui button red" (click)="deleteProduct()">Delete</button>
+      </div>
+      <div *ngIf="addProduct==true">
+        <button type="submit" class="ui button primary" (click)="addNew()">Add</button>
+      </div>
+      <p *ngIf="msg" class="ui header green">{{msg}}</p>
+      <p *ngIf="msg1" class="ui header red">{{msg1}}</p>
+    </form>
+  </div>
+</div>

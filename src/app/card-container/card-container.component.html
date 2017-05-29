@@ -1,0 +1,5 @@
+<div class="ui stackable three column grid">
+  <div class="column cards" *ngFor="let prod of products | async">
+    <app-card [product]="prod"></app-card>
+  </div>
+</div>
