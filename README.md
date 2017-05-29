@@ -1,4 +1,5 @@
 # Listingappsemantic
+Detailed Blog is at [Bongtechs Angular Firebase Semanctic UI](https://www.bongtechs.com/angular2-semantic-ui-set/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
