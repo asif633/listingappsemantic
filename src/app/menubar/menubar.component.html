@@ -3,10 +3,10 @@
     <div class="header item">
       <a routerLink="/" href="#"> ListingApp</a>
     </div>
-    <a class="item" *ngIf="(user|async)?.uid" routerLink="/cardView">
+    <a class="item" routerLink="/cardView">
       Card View
     </a>
-    <a class="item" *ngIf="(user|async)?.uid" routerLink="/listView">
+    <a class="item" routerLink="/listView">
       List View
     </a>
     <div class="right menu">
