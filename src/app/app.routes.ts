@@ -10,8 +10,8 @@ import { ProductManageComponent } from './product-manage/product-manage.componen
 const appRoutes: Routes = [
     {path: '', component: AppComponent, children: [
         {path: '', component: MenubarComponent, children: [
-            {path: 'cardView', component: CardViewComponent, canActivate: [AuthGuard]},
-            {path: 'listView', component: ListViewComponent, canActivate: [AuthGuard]},
+            {path: 'cardView', component: CardViewComponent},
+            {path: 'listView', component: ListViewComponent},
             {path: 'manageProducts', component: ProductManageComponent, canActivate: [AuthGuard]},
             {path: 'signin', component: SignInComponent}
         ]}
